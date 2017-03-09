@@ -4,10 +4,13 @@ from math import sin, cos
 
 def translate(m, a = 0, b = 0, c = 0):
     tm = identity_mtrx()
+    print("*********")
     tm[0][3] += a
     tm[1][3] += b
     tm[2][3] += c
-    
+    print(str(tm[0][3]))
+    print("*********")
+
     return mtrx_mult(m, tm)
 
 

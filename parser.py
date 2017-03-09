@@ -11,7 +11,7 @@ def parse_file(fname, points, transform, screen, color):
     i = 0
     while i < len(lines):
         cmd = lines[i].strip()
-        print(cmd + " - " + str(i))
+        #print(cmd + " - " + str(i))
 #        try:
         if cmd == "line":
             print(cmd)
@@ -53,7 +53,7 @@ def parse_file(fname, points, transform, screen, color):
         elif cmd == "apply":
             print(cmd)
             display_mtrx(transform)
-            print("APPLY:")
+            #print("APPLY:")
             points = mtrx_mult(points, transform)
             i += 1
         elif cmd == "display":
@@ -63,10 +63,12 @@ def parse_file(fname, points, transform, screen, color):
             display(screen)
             i += 1
         elif cmd == "save":
-            display_mtrx(points)
-            display
+            #display_mtrx(points)
+            #for k in points:
+            #    k[0] += 200
+            #    k[1] += 200
             arg = lines[i+1].strip()
-            draw_lines(screen, points, color)
+            #draw_lines(screen, points, color)
             save_extension(screen, arg)
             i += 2
         elif cmd == "quit":
